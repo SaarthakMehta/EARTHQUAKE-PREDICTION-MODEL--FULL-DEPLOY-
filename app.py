@@ -9,7 +9,8 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+model = bz2.BZ2File('test.pbz2', 'rb')
+model = pickle.load(model)
 
 @app.route('/')
 def home():
@@ -26,7 +27,7 @@ def predict():
 
     output = prediction[0]
 
-    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output))
+    return render_template('index.html', prediction_text='Eathquake Magnitude and Depth {}'.format(output))
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
