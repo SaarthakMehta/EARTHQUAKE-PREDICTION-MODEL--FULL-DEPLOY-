@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Oct  7 22:32:38 2020
-
-@author: Ajay
-"""
-
 import requests
 
 url = 'http://localhost:5000/predict_api'
