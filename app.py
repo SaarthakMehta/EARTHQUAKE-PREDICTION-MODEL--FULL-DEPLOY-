@@ -10,8 +10,8 @@ import pickle
 import bz2
 
 app = Flask(__name__)
-model = bz2.BZ2File('test.pbz2', 'rb')
-model = pickle.load(model)
+model = pickle.load(open('model.pkl', 'rb'))
+
 
 @app.route('/')
 def home():
